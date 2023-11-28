@@ -1,10 +1,15 @@
-const express = require('express');
-const app = express();
+import express, { Express, Request, Response } from 'express';
 
-app.use(express.json()); // for parsing application/json
+const app: Express = express();
+const PORT: number | string = process.env.PORT || 3000;
 
-// Define your routes here
-// Example: app.use('/api/transactions', require('./routes/transactionRoutes'));
+app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+// Define routes here
+// Example: app.use('/api/transactions', transactionRoutes);
+
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello World!');
+});
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

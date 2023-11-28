@@ -1,6 +1,6 @@
-const { Pool } = require('pg');
-const dbConfig = require('../../config/DbConfig'); // Adjust the path as needed
+import { Pool } from 'pg';
+import dbConfig from '../config/DbConfig';
 
 const pool = new Pool(dbConfig);
 
-module.exports = pool;
+export default pool;
