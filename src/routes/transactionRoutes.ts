@@ -1,9 +1,11 @@
-import { Router } from 'express';
-import { getTransactions, createTransaction } from '../controllers/TransactionController';
+import express from 'express';
+import multer from 'multer';
+import { createTransactionsFromCSV, getAllTransactions } from '../controllers/TransactionController';
 
-const router = Router();
+const router = express.Router();
+const upload = multer({ dest: 'uploads/' });
 
-router.get('/', getTransactions);
-router.post('/', createTransaction);
+router.post('/', upload.single('file'), createTransactionsFromCSV);
+router.get('/', getAllTransactions);
 
 export default router;

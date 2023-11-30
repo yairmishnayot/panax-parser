@@ -1,15 +1,19 @@
-import express, { Express, Request, Response } from 'express';
+import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const app: Express = express();
+import transactionRoutes from './routes/transactionRoutes';
+
+const app = express();
+
+// Other middleware (like bodyParser, if needed)
+
+app.use('/transactions', transactionRoutes);
+
+// Other routes and error handling
+
+export default app;
+
 const PORT: number | string = process.env.PORT || 3000;
-
-app.use(express.json());
-
-// Define routes here
-// Example: app.use('/api/transactions', transactionRoutes);
-
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!');
-});
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

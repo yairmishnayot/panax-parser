@@ -71,8 +71,7 @@ Transaction.init({
 }, {
   sequelize,
   modelName: 'Transaction',
-  timestamps: false, // Disable automatic timestamp fields
-  freezeTableName: true
+  timestamps: false, // Disable automatic timestamp fields  
 });
 
 export default Transaction;
