@@ -1,0 +1,3 @@
+Assumptions:
+1. If the reference number exists in a transaction, it is unique
+2. We can use the server's time zone for saving the dates.
