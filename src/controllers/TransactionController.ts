@@ -13,7 +13,7 @@ export const createTransactionsFromCSV = async (req: Request, res: Response) => 
     res.status(201).send('Transactions processed successfully');
   } catch (error) {
     errorLogger.error('Error processing transactions:', error);
-    res.status(500).send('Error processing transactions');
+    res.status(500).send(`Error processing transactions: ${error}`);
   }
 };
 
@@ -23,6 +23,6 @@ export const getAllTransactions = async (req: Request, res: Response) => {
     res.status(200).json(transactions);
   } catch (error) {
     errorLogger.error('Error fetching transactions:', error);
-    res.status(500).send('Error retrieving transactions');
+    res.status(500).send(`Error retrieving transactions: ${error}`);
   }
 };

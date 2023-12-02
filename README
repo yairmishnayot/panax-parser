@@ -1,3 +1,4 @@
 Assumptions:
 1. If the reference number exists in a transaction, it is unique
 2. We can use the server's time zone for saving the dates.
+3. The date format in the CSV file for the date field is from the type "30/12/2022"
